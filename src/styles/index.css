@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  transition:
+    background-color 0.3s,
+    border 0.3s;
+}
+body {
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .active {
+    color: grey;
+  }
+}
+
+@media (min-width: 640px) {
+  @layer components {
+    a.active-link {
+      position: relative;
+      text-decoration: none;
+    }
+
+    a.active-link::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: grey;
+      transition: width 0.5s ease;
+    }
+
+    a.active-link:hover::before {
+      width: 100%;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+p {
+  @apply text-sm;
+}
+
+/* ******Light mode******* */
+
+.bg-primary {
+  @apply bg-white;
+}
+
+.text-primary {
+  @apply text-stone-700;
+}
+
+.btn-primary {
+  @apply bg-green-700 text-white opacity-70 ring-4 ring-red-800;
+  transition: background-color 0.5s ease;
+  box-shadow:
+    0 10px 20px 0 rgba(0, 0, 0, 0.2),
+    0 6px 6px 0 rgba(0, 0, 0, 0.23);
+}
+
+.btn-primary:hover {
+  @apply bg-transparent text-green-700 ring-1 ring-green-600;
+}
+
+.btn-secondary {
+  @apply bg-transparent ring-1 ring-stone-300;
+}
+
+.btn-secondary:hover {
+  @apply bg-stone-100  font-semibold opacity-70 ring-1 ring-stone-200;
+}
+
+.border-primary {
+  @apply border-stone-700;
+}
+
+/* *****Dark mode******* */
+
+.dark .bg-primary {
+  @apply bg-black;
+}
+
+.dark .text-primary {
+  @apply text-stone-100;
+}
+
+.dark .btn-primary {
+  @apply bg-gradient-to-r from-blue-700 to-blue-300 text-stone-100 opacity-90;
+  box-shadow:
+    0 15px 20px -3px rgba(13, 151, 253, 0.2),
+    0 4px 6px -2px rgba(13, 110, 253, 0.05);
+}
+
+.dark .btn-primary:hover {
+  @apply bg-gradient-to-r from-blue-600 to-blue-200 text-white;
+  box-shadow:
+    0 15px 25px -3px rgba(13, 151, 253, 0.4),
+    0 4px 6px -2px rgba(13, 110, 253, 0.07);
+}
+
+.dark .btn-secondary {
+  @apply bg-transparent ring-1 ring-blue-500 transition-all duration-300 ease-in-out;
+}
+
+.dark .btn-secondary:hover {
+  @apply font-semibold ring-2 ring-blue-700;
+}
+
+/* React Type Animation Cursor */
+.typeAnimationCursor::after {
+  content: "|";
+  animation: cursor 1.1s infinite step-start;
+}
+
+@keyframes cursor {
+  50% {
+    opacity: 0;
+  }
+}

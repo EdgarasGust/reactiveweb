@@ -1,0 +1,18 @@
+export const icons = [
+  { id: "html", svg: "icons/html.svg" },
+  { id: "sass", svg: "icons/sass.svg" },
+  { id: "javaScript", svg: "icons/javascript.svg" },
+  { id: "typescript", svg: "icons/typescript.svg" },
+  { id: "angular", svg: "icons/angular.svg" },
+  { id: "react", svg: "icons/react.svg" },
+  { id: "jquery", svg: "icons/jquery.svg" },
+  { id: "RxJs", svg: "icons/rxjs.svg" },
+  { id: "Tailwind", svg: "icons/tailwind.svg" },
+  { id: "bootstrap", svg: "icons/bootstrap.svg" },
+  { id: "wordpress", svg: "icons/wordpress.svg" },
+  { id: "Woo", svg: "icons/wooCommerce.svg" },
+  { id: "shopify", svg: "icons/shopify.svg" },
+  { id: "git", svg: "icons/git.svg" },
+  { id: "sublime", svg: "icons/sublime.svg" },
+  { id: "VS code", svg: "icons/visual.svg" },
+];
